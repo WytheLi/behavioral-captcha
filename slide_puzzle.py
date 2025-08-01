@@ -9,7 +9,7 @@ from utils.simulator import MouseDragSimulator
 from utils.window_manager import WindowManager
 
 
-class SliderVerification:
+class SlidePuzzleSolver:
     """
     滑块认证
 
@@ -483,14 +483,14 @@ def main():
 
     args = parser.parse_args()
 
-    recognizer = SliderVerification(debug=True)
+    solver = SlidePuzzleSolver(debug=True)
 
     background_path = args.background
     slider_path = args.slider
     slider_y = args.slider_y and int(args.slider_y)
 
     # 执行滑块验证处理
-    result = recognizer.process_verification(background_path, slider_path, slider_y)
+    result = solver.process_verification(background_path, slider_path, slider_y)
 
     # 打印结果
     print("\n处理结果:")

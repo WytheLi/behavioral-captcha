@@ -35,9 +35,9 @@ def image_to_base64(image_path, max_size=1024):
     return f"data:image/{img_format.lower()};base64,{img_base64}"
 
 
-class NineGridSplitter:
+class GridImageSplitter:
     """
-    九宫格图片分割工具类
+    网格图片分割工具类
 
     功能：
     1. 将图片分割成3×3的九宫格
@@ -45,7 +45,7 @@ class NineGridSplitter:
     3. 支持重新组合验证分割结果
 
     示例用法：
-        splitter = NineGridSplitter("input.jpg", "output_folder")
+        splitter = GridImageSplitter("input.jpg", "output_folder")
         splitter.split()  # 分割图片
         splitter.create_preview()  # 创建预览图
         splitter.recombine()  # 重新组合验证
@@ -220,7 +220,7 @@ class NineGridSplitter:
 if __name__ == "__main__":
     image_path = os.path.join(config.BASE_PATH, "resources/img/nine_grid/2_哪些事物或者动物能在公园里看到.png")
 
-    splitter = NineGridSplitter(
+    splitter = GridImageSplitter(
         image_path=image_path,  # 替换为你的图片路径
         output_folder="9grid_output",  # 输出文件夹
         grid_size=3  # 3×3九宫格
