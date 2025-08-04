@@ -6,12 +6,13 @@
     4. 使用pyautogui自动化工具模拟用户点击拖动滑块
 - 点选图文验证码（Click-Based CAPTCHA）
   - 网格图片点选（Grid Image Selection）
-    1. 分割9宫格图片
-    2. Qwen-VL视觉理解分析图片
-    3. AI分析问题答案
-    4. 自动化工具模拟点击
+    1. PIL分割网格图片（分割9宫格图片为独立小图）
+    2. 使用qwen-vl-max-latest模型分析描述每张小图的内容
+    3. 使用qwen-max模型处理这些图片描述符合问题的结果
+    4. opencv-python比对小图在屏幕中的坐标
+    5. pyautogui根据坐标模拟用户点击对应的图片
 
-Examples:
+- Examples:
 ![demo-video.gif](./resources/example/demo-video.gif)
 
 ### pywinauto介绍
